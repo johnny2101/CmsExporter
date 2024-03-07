@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="cosmobile_cmsexporter_export_category" xsi:type="object">
+                    Cosmobile\CmsExporter\Console\Command\ExportCategory
+                </item>
+
+                <item name="cosmobile_cmsexporter_export_cms_blocks" xsi:type="object">
+                    Cosmobile\CmsExporter\Console\Command\ExportCmsBlock
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!--<type name="Cosmobile\CatalogExporter\Ui\Component\MassAction\Badge\Assignoptions">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="urlPath" xsi:type="string">catalogexporter/index/export</item>
+                <item name="paramName" xsi:type="string">status</item>
+                <item name="confirm" xsi:type="array">
+                    <item name="title" xsi:type="string" translatable="true">Change Status</item>
+                    <item name="message" xsi:type="string" translatable="true">Are you sure to change?</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>-->
+</config>

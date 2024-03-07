@@ -1,0 +1,53 @@
+<?php
+/**
+ * @var $block \Xigen\AdminModal\Block\Adminhtml\Modal
+ */
+?>
+<div class="page-actions">
+    <div class="page-actions-inner">
+        <div class="page-actions-buttons">
+            <button id="xigen-open-modal"
+                    class="action-primary"
+                    type="button"
+                    title="<?= $block->escapeHtmlAttr(__('Trigger Modal')) ?>">
+                <?= $block->escapeHtml(__('Trigger Modal')) ?>
+            </button>
+        </div>
+    </div>
+</div>
+<div id="xigen-admin-modal">
+    <?= $block->escapeHtml($block->getModalContent()); ?>
+</div>
+<script>
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal',
+        ],
+        function(
+            $,
+            modal
+        ) {
+            var options = {
+                type: 'popup',
+                // responsive: true,
+                innerScroll: true,
+                title: false,
+                modalClass:'modal-pricepopup',
+                buttons: [{
+                    text: $.mage.__('Close'),
+                    class: '',
+                    click: function () {
+                        this.closeModal();
+                    }
+                }]
+            };
+            $(document).ready(function(){
+                var popup = modal(options, $('#xigen-admin-modal'));
+                $('#xigen-open-modal').on('click', function(){
+                    $('#xigen-admin-modal').modal('openModal');
+                });
+            });
+        }
+    );
+</script>

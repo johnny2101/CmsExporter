@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <settings>
+        <buttons>
+            <button name="import" class="Cosmobile\CmsExporter\Block\Adminhtml\Modal"/>
+        </buttons>
+    </settings>
+    <listingToolbar name="listing_top">
+        <massaction name="listing_massaction">
+            <action name="export">
+                <settings>
+                    <confirm>
+                        <message translate="true">Are you sure you want to export selected items?</message>
+                        <title translate="true">Export items</title>
+                    </confirm>
+                    <url path="cmsexporter/block/export"/>
+                    <type>export</type>
+                    <label translate="true">Export</label>
+                </settings>
+            </action>
+        </massaction>
+    </listingToolbar>
+</listing>
